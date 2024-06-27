@@ -805,7 +805,7 @@ void Infected_DoSmokerBeam(int iClient)
 		GetClientAbsOrigin(iHit, vecHitPos);
 		MakeVectorFromPoints(vecOrigin, vecHitPos, vecVelocity);
 		NormalizeVector(vecVelocity, vecVelocity);
-		ScaleVector(vecVelocity, fMin(-700.0 + GetClientHealth(iHit), -10.0) );
+		ScaleVector(vecVelocity, fMin(-900.0 + GetClientHealth(iHit), -10.0) );
 		TeleportEntity(iHit, NULL_VECTOR, NULL_VECTOR, vecVelocity);
 		
 		//If target changed, change stored target AND reset beam hit count

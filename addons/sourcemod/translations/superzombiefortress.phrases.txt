@@ -430,6 +430,11 @@
 	{
 		"en"		"{orange}The Eyelander {red}makes you move 15%% slower."
 	}
+
+	"Melee_Sandman"
+	{
+		"en"		"{orange}The Eyelander {red}health penalty."
+	}
 	
 	"PDA_InvisWatch"
 	{

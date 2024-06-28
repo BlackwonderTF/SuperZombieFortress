@@ -932,8 +932,8 @@ public void Infected_OnJockeyThink(int iClient, int &iButtons)
 			GetClientEyeAngles(iTarget, vecTargetEye);
 			vecJockeyEye[2] = 0.0;
 			vecTargetEye[2] = 0.0;
-			AnglesToVelocity(vecJockeyEye, vecJockeyVel, flSpeed * g_cvJockeyMovementAttacker.FloatValue);
-			AnglesToVelocity(vecTargetEye, vecTargetVel, flSpeed * g_cvJockeyMovementVictim.FloatValue);
+			AnglesToVelocity(vecJockeyEye, vecJockeyVel, flSpeed * 1.35);
+			AnglesToVelocity(vecTargetEye, vecTargetVel, flSpeed * 0.00);
 
 			AddVectors(vecJockeyVel, vecTargetVel, vecFinalVel);
 			TeleportEntity(iTarget, NULL_VECTOR, NULL_VECTOR, vecFinalVel);

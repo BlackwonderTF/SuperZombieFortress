@@ -428,6 +428,7 @@ public Action Event_PlayerBuiltObject(Event event, const char[] name, bool dontB
 			SetEntProp(iEntity, Prop_Send, "m_iMaxHealth", iMaxHealth * 2);	// Double max health (default level 1 is 150)
 		}
 		SetEntProp(iEntity, Prop_Send, "m_bCarried", 1);	// Disable healing/ammo and upgrading
+		
 	}
 	
 	return Plugin_Continue;

@@ -29,6 +29,8 @@ static char g_sClassFiles[view_as<int>(TFClass_Engineer) + 1][16] = { "", "scout
 static int g_iVoodooIndex[view_as<int>(TFClass_Engineer) + 1] =  {-1, 5617, 5625, 5618, 5620, 5622, 5619, 5624, 5623, 5621};
 static int g_iZombieSoulIndex[view_as<int>(TFClass_Engineer) + 1];
 
+static char g_sObjectClassNames[view_as<int>(TFObject_Sapper) + 1][32] = { "obj_dispenser", "obj_teleporter", "obj_sentrygun", "obj_sapper" };
+
 ////////////////
 // Math
 ////////////////
@@ -1157,4 +1159,16 @@ stock bool CanRecieveDamage(int iClient)
 		return false;
 	
 	return true;
+}
+
+stock int CountClientBuilding(int iClient, TFObjectType nObjectType)
+{
+	int iBuildingCount = 0;
+	int iIndex = -1;
+	while ((iIndex = FindEntityByClassname(iIndex, g_sObjectClassNames[view_as<int>(nObjectType)])) != -1)
+	{
+		if (GetEntPropEnt(iIndex, Prop_Send, "m_hBuilder") == iClient)
+			iBuildingCount++;
+	}
+	return iBuildingCount;
 }

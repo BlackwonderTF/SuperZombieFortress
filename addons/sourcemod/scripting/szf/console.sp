@@ -309,6 +309,10 @@ public Action Console_Build(int iClient, const char[] sCommand, int iArgs)
 	//if not sentry or dispenser, then block building
 	if (nObjectType != TFObject_Dispenser && nObjectType != TFObject_Sentry)
 		return Plugin_Handled;
+
+	// If client is trying to build a dispenser and already has one, block building
+	if(nObjectType == TFObject_Dispenser && CountClientBuilding(iClient, TFObject_Dispenser) >= 1)
+		return Plugin_Handled;
 	
 	return Plugin_Continue;
 }

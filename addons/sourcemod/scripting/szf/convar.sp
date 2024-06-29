@@ -43,6 +43,7 @@ void ConVar_Init()
 	ConVar_Add("tf_player_movement_restart_freeze", 0.0);
 	ConVar_Add("tf_sentrygun_metal_per_shell", 201.0);
 	ConVar_Add("tf_weapon_criticals", 0.0);
+	ConVar_Add("tf_bot_quota", 2.0);
 }
 
 void ConVar_Add(const char[] sConVar, float flValue)
